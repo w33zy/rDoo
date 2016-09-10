@@ -25,3 +25,7 @@ input[type="radio"], input[type="checkbox"] {
 nav.navbar.navbar-fixed-top {
     box-shadow: 0px 4px 4px rgba(128, 128, 128, 0.17);
 }
+
+.navbar-nav li.active {
+    background: rgba(207, 239, 255, 0.56);
+}
