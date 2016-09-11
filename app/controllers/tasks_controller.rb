@@ -6,9 +6,9 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
 #   @tasks = current_user.tasks
-    @to_do = current_user.tasks.where(state: "to_do")
-    @doing = current_user.tasks.where(state: "doing")
-    @done = current_user.tasks.where(state: "done")
+    @to_do = current_user.tasks.where(state: "to_do").order('created_at DESC')
+    @doing = current_user.tasks.where(state: "doing").order('created_at DESC')
+    @done = current_user.tasks.where(state: "done").order('created_at DESC')
   end
 
   # GET /tasks/1
