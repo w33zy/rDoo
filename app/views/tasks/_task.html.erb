@@ -1,4 +1,4 @@
-<div class="panel panel-info">
+<div id="<%= dom_id(task) %>" class="panel panel-info">
     <div class="panel-heading">
         <%= link_to edit_task_path(task) do %>
 		    Created <%= time_ago_in_words(task.created_at) %> ago 
@@ -9,12 +9,12 @@
     <div class="panel-footer text-center">
         <div class="btn-group btn-group-justified">
             <% if task.state == 'doing' %>
-                <%= link_to "<i class ='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "to_do"), method: :put, class: "btn btn-info btn-md btn-block"  %>
-                <%= link_to "<i class ='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "done"), method: :put, class: "btn btn-info btn-md btn-block"  %>
+                <%= link_to "<i class ='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "to_do"), method: :put, remote: true, class: "btn btn-info btn-md btn-block doing-todo"  %>
+                <%= link_to "<i class ='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "done"), method: :put, remote: true, class: "btn btn-info btn-md btn-block doing-done"  %>
             <% elsif task.state == 'done' %>
-                <%= link_to "<i class ='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "doing"), method: :put, class: "btn btn-info btn-md btn-block"  %>
+                <%= link_to "<i class ='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "doing"), method: :put,remote: true, class: "btn btn-info btn-md btn-block done-doing"  %>
             <% else %>
-                <%= link_to "<i class ='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "doing"),method: :put, class: "btn btn-info btn-md btn-block" %>
+                <%= link_to "<i class ='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "doing"),method: :put, remote: true, class: "btn btn-info btn-md btn-block todo-doing" %>
             <% end %>
         </div>
     </div>

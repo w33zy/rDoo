@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+$('.todo-panel').on('ajax:success', function(event, xhr, status, error){
+    $(this).append(xhr.responseText)
+});

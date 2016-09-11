@@ -1,0 +1,22 @@
+$('.todo-doing').bind('ajax:success', function() {
+   $(this).closest('.panel-info').slideUp();
+   $('.doing-panel').append("<%= escape_javascript render(@task) %>");
+});
+
+$('.doing-todo').bind('ajax:success', function() {
+   $(this).closest('.panel-info').slideUp();
+   $('.todo-panel').append("<%= escape_javascript render(@task) %>");
+});
+
+$('.doing-done').bind('ajax:success', function() {
+   $(this).closest('.panel-info').slideUp();
+   $('.done-panel').append("<%= escape_javascript render(@task) %>");
+});
+
+$('.done-doing').bind('ajax:success', function() {
+   $(this).closest('.panel-info').slideUp();
+   $('.doing-panel').append("<%= escape_javascript render(@task) %>");
+});
+
+
+
