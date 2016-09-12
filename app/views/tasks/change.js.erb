@@ -17,6 +17,3 @@ $('.done-doing').bind('ajax:success', function() {
    $(this).closest('.panel-info').slideUp();
    $('.doing-panel').append("<%= escape_javascript render(@task) %>");
 });
-
-
-

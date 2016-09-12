@@ -7,18 +7,26 @@
 
 
 <div class="row">
-    <div class="col-md-4 todo-panel">
+    <div class="col-md-4">
         <h1 class="text-center">ToDo</h1>
-        <%= render @to_do %>
+        <div class="todo-panel">
+            <%= render @to_do %>
+        </div>
+        
     </div>
 
-    <div class="col-md-4 doing-panel">
+    <div class="col-md-4">
         <h1 class="text-center">Doing</h1>
-        <%= render @doing %>
+        <div class="doing-panel">
+            <%= render @doing %>
+        </div>        
     </div>
 
     <div class="col-md-4 done-panel">
         <h1 class="text-center">Done</h1>
-        <%= render @done %>
+        <div class="done-panel">
+            <%= render @done %>
+        </div>
+        
     </div>
 </div>
